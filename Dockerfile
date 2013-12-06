@@ -6,7 +6,7 @@ FROM      ubuntu
 MAINTAINER Kennon Kwok "kennon.kwok@gmail.com"
 
 # install curl
-RUN apt-get update &&  RUN apt-get install -y curl && apt-cache clean && rm -fr /var/cache/apt
+RUN apt-get update && apt-get install -y curl && apt-cache clean && rm -fr /var/cache/apt
 
 # install omunibus-chef
 RUN curl -L "https://www.opscode.com/chef/install.sh" | sudo bash -s -- -v 11.8.2
