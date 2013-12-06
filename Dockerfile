@@ -3,13 +3,10 @@
 # VERSION               0.0.1
 
 FROM      ubuntu
-MAINTAINER Darron Froese "darron@froese.org"
+MAINTAINER Kennon Kwok "kennon.kwok@gmail.com"
 
 # install curl
-RUN apt-get update
-RUN apt-get install -y curl
+RUN apt-get update &&  RUN apt-get install -y curl && apt-cache clean && rm -fr /var/cache/apt
 
 # install omunibus-chef
-RUN curl -L https://www.opscode.com/chef/install.sh -o /tmp/install.sh
-RUN bash /tmp/install.sh
-RUN rm /tmp/install.sh
+RUN curl -L "https://www.opscode.com/chef/install.sh" | sudo bash -s -- -v 11.8.2
